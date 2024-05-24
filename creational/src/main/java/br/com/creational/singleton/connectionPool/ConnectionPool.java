@@ -1,11 +1,14 @@
 package br.com.creational.singleton.connectionPool;
 
+import br.com.creational.singleton.Client;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class ConnectionPool {
   private ConnectionPool() {
-    System.out.println("Creating connection pool...");
+    _logger.info("Creating connection pool...");
 
     for (int i = 0; i < POOL_SIZE; i++) {
       connectionsList.add(new Connection(false));
@@ -24,7 +27,7 @@ public class ConnectionPool {
     }
 
     if(available == null) {
-      System.out.println("No connections available!");
+      _logger.info("No connections available!");
       return null;
     }
 
@@ -40,6 +43,7 @@ public class ConnectionPool {
     return _instance;
   }
 
+  private static final Logger _logger = Logger.getLogger(Client.class.getName());
   private static final ConnectionPool _instance = new ConnectionPool();
   private final static int POOL_SIZE = 2;
   private final List<Connection> connectionsList = new ArrayList<>();

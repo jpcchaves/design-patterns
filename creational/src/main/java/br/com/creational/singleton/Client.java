@@ -4,7 +4,9 @@ package br.com.creational.singleton;
 import br.com.creational.singleton.connectionPool.Connection;
 import br.com.creational.singleton.connectionPool.ConnectionPool;
 
+
 public class Client {
+
   public static void doQuery1(){
     ConnectionPool pool = ConnectionPool.getInstance();
     Connection conn = pool.getConnection();
@@ -37,4 +39,5 @@ public class Client {
     doQuery2();
     doQuery3();
   }
+
 }
