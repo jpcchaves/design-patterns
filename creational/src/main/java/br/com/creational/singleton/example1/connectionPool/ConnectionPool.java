@@ -1,12 +1,16 @@
-package br.com.creational.singleton.connectionPool;
+package br.com.creational.singleton.example1.connectionPool;
 
-import br.com.creational.singleton.Client;
-
+import br.com.creational.singleton.example1.Client;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class ConnectionPool {
+  private static final Logger _logger = Logger.getLogger(Client.class.getName());
+  private static final ConnectionPool _instance = new ConnectionPool();
+  private final static int POOL_SIZE = 2;
+  private final List<Connection> connectionsList = new ArrayList<>();
+
   private ConnectionPool() {
     _logger.info("Creating connection pool...");
 
@@ -14,6 +18,10 @@ public class ConnectionPool {
       connectionsList.add(new Connection(false));
     }
 
+  }
+
+  public static ConnectionPool getInstance() {
+    return _instance;
   }
 
   public Connection getConnection() {
@@ -38,14 +46,5 @@ public class ConnectionPool {
   public void disconnect(Connection conn) {
     conn.setInUse(false);
   }
-
-  public static ConnectionPool getInstance() {
-    return _instance;
-  }
-
-  private static final Logger _logger = Logger.getLogger(Client.class.getName());
-  private static final ConnectionPool _instance = new ConnectionPool();
-  private final static int POOL_SIZE = 2;
-  private final List<Connection> connectionsList = new ArrayList<>();
 
 }
