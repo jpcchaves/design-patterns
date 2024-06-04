@@ -1,4 +1,4 @@
-package br.com.creational.builder.generic;
+package br.com.creational.builder.generic.model;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.function.BooleanSupplier;
@@ -20,12 +20,8 @@ public class Builder<T> {
     }
   }
 
-  public static <T> Builder<T> build(Class<T> clazz) {
+  public static <T> Builder<T> builder(Class<T> clazz) {
     return new Builder<>(clazz);
-  }
-
-  public static <T> Builder<?> builder(Class<T> clazz) {
-    return new Builder<T>(clazz);
   }
 
   public Builder<T> If(BooleanSupplier condition) {
