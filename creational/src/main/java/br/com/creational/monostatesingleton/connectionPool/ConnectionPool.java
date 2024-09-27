@@ -8,12 +8,11 @@ import java.util.logging.Logger;
 
 public class ConnectionPool {
   private static final Logger _logger = Logger.getLogger(Client.class.getName());
-  private final static int POOL_SIZE = 2;
+  private static final int POOL_SIZE = 2;
   private static final List<Connection> connectionsList;
 
-
   static {
-    connectionsList  = new ArrayList<>();
+    connectionsList = new ArrayList<>();
 
     for (int i = 0; i < POOL_SIZE; i++) {
 
@@ -35,7 +34,7 @@ public class ConnectionPool {
       }
     }
 
-    if(available == null) {
+    if (available == null) {
       _logger.info("No connections available!");
       return null;
     }

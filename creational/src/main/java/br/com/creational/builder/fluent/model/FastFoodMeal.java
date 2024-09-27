@@ -57,12 +57,22 @@ public class FastFoodMeal {
 
   @Override
   public String toString() {
-    return "FastFoodMeal{" +
-        "drink='" + drink + '\'' +
-        ", main='" + main + '\'' +
-        ", side='" + side + '\'' +
-        ", dessert='" + dessert + '\'' +
-        ", gift='" + gift + '\'' +
-        '}';
+    return "FastFoodMeal{"
+        + "drink='"
+        + drink
+        + '\''
+        + ", main='"
+        + main
+        + '\''
+        + ", side='"
+        + side
+        + '\''
+        + ", dessert='"
+        + dessert
+        + '\''
+        + ", gift='"
+        + gift
+        + '\''
+        + '}';
   }
 }

@@ -3,7 +3,7 @@ package br.com.creational.builder.fluent.model.builder;
 import br.com.creational.builder.fluent.model.FastFoodMeal;
 
 public class FastFoodMealBuilder {
- // Mandatory
+  // Mandatory
   private String side;
 
   // Optionals
