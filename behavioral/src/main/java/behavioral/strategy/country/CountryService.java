@@ -1,4 +1,4 @@
-package behavioral.country;
+package behavioral.strategy.country;
 
 import java.util.Map;
 import java.util.Objects;

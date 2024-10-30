@@ -1,4 +1,4 @@
-package behavioral.country;
+package behavioral.strategy.country;
 
 public class ArgentinaCountryStrategy implements CountryStrategy {
 
